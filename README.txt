@@ -27,4 +27,9 @@ of the project staged changes and creates a version out of it.
 9.  `git log` ->list downs all the commits of the repository.If you want to exit out
 of git log press `q`.
 
+10. `git restore <file> ->It removes all file changes from the staging area to be committed.
+This can be useful,If we did some dirty piece of code and now no more want it.Instead of 
+deleting every change line by line,we can restore last clean version of the file.
+
+11. `git restore --staged <file>` ->It removes file changes from the stain area to the working area.
 

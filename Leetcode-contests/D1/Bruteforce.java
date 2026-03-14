@@ -1,3 +1,4 @@
+package D1;
 public class Bruteforce {
      static final int MOD = 1_000_000_007;
     static String target;

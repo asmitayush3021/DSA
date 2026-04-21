@@ -1,0 +1,59 @@
+1️⃣ Every operation is a rotation
+
+Moving a suffix to the front produces a cyclic rotation of the string.
+
+So after any number of operations, s will always be some rotation of the original string.
+
+2️⃣ If t is not a rotation of s, answer is 0
+
+If t never appears inside s + s, then it’s impossible to reach t using rotations.
+
+3️⃣ You never need to track the full string
+
+At any point, the current string is either:
+
+Good → equal to t
+
+Bad → not equal to t
+
+So the problem reduces to counting transitions between good and bad states.
+
+4️⃣ Count rotations, not transformations
+
+Let:
+
+good = number of rotations of s that equal t
+
+bad = n - good
+
+Instead of simulating strings, we count:
+
+g(k) = number of ways to be in a good state after k operations
+
+b(k) = number of ways to be in a bad state after k operations
+
+5️⃣ Recurrence relation (heart of the problem)
+
+From counting transitions:
+
+g(k) = g(k-1) * (good - 1) + b(k-1) * good
+b(k) = g(k-1) * bad        + b(k-1) * (bad - 1)
+
+
+Base case:
+
+If s == t → g(0) = 1, b(0) = 0
+
+Else → g(0) = 0, b(0) = 1
+
+6️⃣ Why this is hard
+
+k can be as large as 10¹⁵
+
+Simple DP is too slow
+
+The recurrence is linear, so we use matrix exponentiation to jump directly to step k in O(log k) time
+
+In One Line (Perfect Summary)
+
+The problem is not about strings, but about counting ways to move between good and bad rotations using a 2-state linear recurrence, optimized with matrix exponentiation.

@@ -1,0 +1,12 @@
+You are given two strings s and t of the same length n.
+
+You are allowed to repeat the following operation exactly k times:
+
+Take a non-empty suffix of s (length 1 to n-1) and move it to the front of the string.
+
+This operation is nothing but a rotation of the string.
+
+Your task is to count how many different sequences of k such operations can transform s into t.
+
+Since the number of ways can be very large, return the answer modulo 10^9 + 7.
+
